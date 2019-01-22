@@ -3,6 +3,6 @@ func! Focus(comando,vim_comando)
   silent exe 'wincmd ' . a:vim_comando
   let neww = winnr()
   if oldw == neww
-      call i3vimfocus#PythonExecProcess("qtile-cmd", ["-o", "layout", "-f", a:comando])
+      call i3vimfocus#PythonExecProcess("qtile-cmd", ["-o", "layout", "-f", a:comando, ">/dev/null", "2>&1"])
   endif
 endfunction
