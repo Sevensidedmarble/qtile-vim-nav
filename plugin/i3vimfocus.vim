@@ -6,5 +6,6 @@ func! Focus(comando,vim_comando)
       " Use python to invoke the i3-msg command so that vim doesn't need to be
       " redrawn.
       call i3vimfocus#PythonExecProcess("i3-msg", ["-q", "focus", a:comando])
+      call i3vimfocus#PythonExecProcess("qtile-cmd", ["-o", "layout", "-f", a:comando])
   endif
 endfunction
